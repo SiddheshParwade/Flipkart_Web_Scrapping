@@ -92,15 +92,15 @@ def pageScraper(i, j):
         soup = BeautifulSoup(r.text, 'html.parser')
 
         try:
-            cards = soup.find_all('div', class_='yKfJKb row')
+            cards = soup.find_all('div', class_='yKfJKb row') ## If code does not work please check the class name of div that contain info
         except AttributeError:
             print(f"⚠️ Page {page} structure not found. Skipping.")
             continue
         
         for card in cards:
-            names = card.find("div", class_="KzDlHZ")
-            ratings = card.find("div", class_="XQDdHH")
-            prices = card.find("div", class_="Nx9bqj _4b5DiR")
+            names = card.find("div", class_="KzDlHZ") ## If code does not work please check the class name of div that contain info
+            ratings = card.find("div", class_="XQDdHH") ## If code does not work please check the class name of div that contain info
+            prices = card.find("div", class_="Nx9bqj _4b5DiR") ## If code does not work please check the class name of div that contain info
 
             name = names.text.strip() if names else "None"
             rating = ratings.text.strip() if ratings else "None"
